@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from "@angular/core";
+import { Component } from "@angular/core";
 import { AuthenticationService } from "@app-core/authentication/authentication.service";
 import { Router } from "@angular/router";
 
@@ -8,21 +8,16 @@ import { Router } from "@angular/router";
   styleUrls: ["./toolbar.component.scss"],
 })
 export class ToolbarComponent {
-  @Output()
-  toggleHideSidebar = new EventEmitter<any>();
+
+  userName!: string
 
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router
-  ) {}
-
-  toggleSidebar() {
-    /*const appSidebar = document.getElementsByClassName("app-sidebar")[0];
-    if (appSidebar.classList.contains("hide-sidebar")) {
-      this.toggleHideSidebar.emit(false);
-    } else {
-      this.toggleHideSidebar.emit(true);
-    }*/
+  ) {
+    const user = localStorage.getItem('user')
+    if (user)
+      this.userName = window.atob(user).split('.')[1]
   }
 
   public logout(): void {

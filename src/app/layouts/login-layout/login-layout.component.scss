@@ -1,0 +1,25 @@
+.login-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__logo {
+        width: 12%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    &__form {
+        width: 12vw;
+        background-color: #e9e9e9;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    &__button {
+        margin-top: 30px;
+    }
+}

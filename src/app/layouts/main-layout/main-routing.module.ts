@@ -12,14 +12,22 @@ const routes: Routes = [
       {
         path: "",
         pathMatch: "full",
-        redirectTo: "dashboard",
+        redirectTo: "containers",
       },
       {
-        path: "dashboard",
+        path: "containers",
         pathMatch: "full",
         loadChildren: () =>
-          import("../../modules/dashboard/dashboard.module").then(
-            (m) => m.DashboardModule
+          import("../../modules/containers/containers.module").then(
+            (m) => m.ContainersModule
+          ),
+      },
+      {
+        path: "book",
+        pathMatch: "full",
+        loadChildren: () =>
+          import("../../modules/book/book.module").then(
+            (m) => m.BookModule
           ),
       },
     ],
@@ -30,4 +38,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class MainRoutingModule {}
+export class MainRoutingModule { }

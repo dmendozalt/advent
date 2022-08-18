@@ -15,12 +15,12 @@ import { AuthenticationService } from "@app-core/authentication/authentication.s
   imports: [
     BrowserModule,
     Routing,
-    LoginLayoutModule,
     MainLayoutModule,
+    LoginLayoutModule,
     HttpClientModule,
     BrowserAnimationsModule,
   ],
   providers: [AuthenticationService, AuthGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

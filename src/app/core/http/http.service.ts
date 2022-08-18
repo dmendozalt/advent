@@ -14,7 +14,7 @@ import { environment } from "@environments/environment";
   providedIn: "root",
 })
 export class HttpService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   public get<T>(endPoint: string, params: any) {
     return this.http
@@ -38,21 +38,21 @@ export class HttpService {
     endPoint: string,
     param: {
       headers?:
-        | HttpHeaders
-        | { [header: string]: string | string[] }
-        | undefined;
+      | HttpHeaders
+      | { [header: string]: string | string[] }
+      | undefined;
       observe: "events";
       context?: HttpContext | undefined;
       params?:
-        | HttpParams
-        | {
-            [param: string]:
-              | string
-              | number
-              | boolean
-              | (string | number | boolean)[];
-          }
-        | undefined;
+      | HttpParams
+      | {
+        [param: string]:
+        | string
+        | number
+        | boolean
+        | (string | number | boolean)[];
+      }
+      | undefined;
       reportProgress?: boolean | undefined;
       responseType?: "json" | undefined;
       withCredentials?: boolean | undefined;
@@ -78,8 +78,9 @@ export class HttpService {
 
     if (error.status === 404) {
       Swal.fire("!Error!", "Error in model to save information", "error");
+    } else if (error.status === 401) {
     } else if (error.status !== 500 && error.status !== 0) {
-      Swal.fire("!Error!", error.error.non_field_errors[0], "error");
+      Swal.fire("!Error!", error.error.message, "error");
     } else {
       Swal.fire("!Error!", errorMessage, "error");
     }

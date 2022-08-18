@@ -6,9 +6,9 @@ import { MainLayoutComponent } from "./main-layout.component";
 import { AngularMaterialModule } from "@shared/angular-material/angular-material.module";
 import { InterceptorService } from "@app-core/http/interceptor.service";
 import { MainRoutingModule } from "./main-routing.module";
-import { DashboardModule } from "@app-modules/dashboard/dashboard.module";
 import { SidenavComponent } from "./components/sidenav/sidenav.component";
 import { ToolbarComponent } from "./components/toolbar/toolbar.component";
+import { ContainersModule } from "@app-modules/containers/containers.module";
 
 @NgModule({
   declarations: [MainLayoutComponent, SidenavComponent, ToolbarComponent],
@@ -17,7 +17,7 @@ import { ToolbarComponent } from "./components/toolbar/toolbar.component";
     RouterModule,
     MainRoutingModule,
     CommonModule,
-    DashboardModule,
+    ContainersModule,
   ],
   providers: [
     {
@@ -27,4 +27,4 @@ import { ToolbarComponent } from "./components/toolbar/toolbar.component";
     },
   ],
 })
-export class MainLayoutModule {}
+export class MainLayoutModule { }

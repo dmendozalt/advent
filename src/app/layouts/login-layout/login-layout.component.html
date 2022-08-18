@@ -1,9 +1,17 @@
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Username" />
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="password" />
-  </mat-form-field>
-  <button mat-button (click)="goTo()">Click me!</button>
-</form>
+<div class="login-container">
+    <img src="/assets/logo.png" alt="" class="login-container__logo">
+    <div class="login-container__form-container">
+        <form class="login-container__form" [formGroup]="loginForm">
+            <mat-form-field class="login-container__input">
+                <input matInput placeholder="Username" formControlName='username' />
+            </mat-form-field>
+            <mat-form-field class="login-container__input">
+                <input matInput type="password" placeholder="Password" formControlName='password' />
+            </mat-form-field>
+            <button *ngIf="!clicked" class="login-container__button" mat-raised-button color="warn"
+                [disabled]="loginForm.invalid" (click)="goTo()">Log In</button>
+            <mat-progress-bar *ngIf="clicked" mode="indeterminate" color="warn" class="login-container__button">
+            </mat-progress-bar>
+        </form>
+    </div>
+</div>

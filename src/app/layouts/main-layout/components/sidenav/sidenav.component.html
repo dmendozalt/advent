@@ -1,0 +1,15 @@
+<mat-sidenav-container>
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport>
+        <img src="/assets/logo.png" class="sidenav__logo">
+        <mat-list>
+            <mat-list-item routerLink="containers" class="sidenav__menu-item">
+                <mat-icon> list_alt</mat-icon>
+                Containers
+            </mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-toolbar></app-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
