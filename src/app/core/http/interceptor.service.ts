@@ -13,7 +13,7 @@ import { tap } from "rxjs/operators";
   providedIn: "root",
 })
 export class InterceptorService implements HttpInterceptor {
-  constructor() {}
+  constructor() { }
 
   // Intercept the request to set header.
   public intercept(
@@ -27,7 +27,7 @@ export class InterceptorService implements HttpInterceptor {
 
     if (req.url.indexOf("login") === -1 && token) {
       req = req.clone({
-        setHeaders: { ...params, Authorization: "Token " + token },
+        setHeaders: { ...params, Authorization: "Bearer " + token },
       });
     } else {
       req = req.clone({
@@ -41,7 +41,7 @@ export class InterceptorService implements HttpInterceptor {
           if (event instanceof HttpResponse) {
           }
         },
-        () => {}
+        () => { }
       )
     );
   }

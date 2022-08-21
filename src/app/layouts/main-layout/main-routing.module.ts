@@ -30,6 +30,14 @@ const routes: Routes = [
             (m) => m.BookModule
           ),
       },
+      {
+        path: "payment",
+        pathMatch: "full",
+        loadChildren: () =>
+          import("../../modules/payment/payment.module").then(
+            (m) => m.PaymentModule
+          ),
+      },
     ],
   },
 ];

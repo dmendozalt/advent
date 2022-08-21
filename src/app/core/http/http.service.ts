@@ -16,7 +16,7 @@ import { environment } from "@environments/environment";
 export class HttpService {
   constructor(private http: HttpClient) { }
 
-  public get<T>(endPoint: string, params: any) {
+  public get<T>(endPoint: string, params?: any) {
     return this.http
       .get<T>(environment.URL + environment.API + endPoint, { params })
       .pipe(catchError(this.handleError));

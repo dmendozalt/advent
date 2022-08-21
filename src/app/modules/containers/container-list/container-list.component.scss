@@ -1,0 +1,35 @@
+.containers {
+    padding: 80px 40px 0px 40px;
+
+    &__table {
+        width: 100%;
+    }
+
+    &__button {
+        color: #32a852;
+    }
+
+    &__status {
+        &--yard {
+            color: #1d7d14;
+        }
+
+        &--gate {
+            color: #97001c;
+        }
+
+        &--unload {
+            color: #141e7d;
+        }
+    }
+}
+
+.mat-column-container,
+.mat-column-status {
+    font-weight: 500;
+}
+
+.mat-header-cell {
+    font-size: 18px;
+    font-weight: bolder;
+}

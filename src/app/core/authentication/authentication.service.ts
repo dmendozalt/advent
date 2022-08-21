@@ -1,7 +1,5 @@
 import { Injectable } from "@angular/core";
-import { environment } from "@environments/environment";
 import { Observable } from "rxjs";
-
 import { HttpService } from "../http/http.service";
 
 export const TOKEN_NAME = "token";
@@ -28,7 +26,7 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<unknown> {
-    return this.httpService.post(`${environment.API}Authtentication`, {
+    return this.httpService.post('Authtentication', {
       username,
       password,
     });
