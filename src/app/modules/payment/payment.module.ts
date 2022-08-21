@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PaymentRoutingModule } from './payment-routing.module';
 import { PaymentComponent } from './payment/payment.component';
+import { AngularMaterialModule } from '@shared/angular-material/angular-material.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PaymentComponent } from './payment/payment.component';
   ],
   imports: [
     CommonModule,
-    PaymentRoutingModule
+    PaymentRoutingModule,
+    AngularMaterialModule
   ]
 })
 export class PaymentModule { }

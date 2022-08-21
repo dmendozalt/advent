@@ -1,1 +1,79 @@
-<p>payment works!</p>
+<div class="content">
+    <div class="title">
+        Confirm Purchase
+    </div>
+    <div class="card">
+        <div class="title">My Card</div> 
+        <div class="table">
+            <table mat-table [dataSource]="listCard" class="mat-elevation-z0">
+                <ng-container matColumnDef="issues_by">
+                  <th mat-header-cell *matHeaderCellDef width="30%"> Issues By </th>
+                  <td mat-cell *matCellDef="let element"> {{element.issues_by}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="qty">
+                  <th mat-header-cell *matHeaderCellDef width="15%"> QTY </th>
+                  <td mat-cell *matCellDef="let element"> {{element.qty}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="fee">
+                  <th mat-header-cell *matHeaderCellDef width="20%"> Fee </th>
+                  <td mat-cell *matCellDef="let element"> {{element.fee | currency}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="total">
+                  <th mat-header-cell *matHeaderCellDef width="20%"> Total </th>
+                  <td mat-cell *matCellDef="let element"> {{element.total | currency}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <button class="gray-background" mat-mini-fab>
+                            <mat-icon>close</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              
+        </div>
+        <div class="total">
+            Total  {{totalPayment | currency}}
+        </div>
+        <div class="btn-table">
+            <button mat-button>Cancelar</button>
+        </div>
+    </div>
+    <div class="payment-info">
+        <div class="title">Payment information</div>
+        <div class="info"> Total {{totalPayment | currency}} USD</div>
+        <div class="form">
+            <div class="data-input">
+                <label for="">Company</label>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <input matInput placeholder="Trucking Company Name">
+                </mat-form-field>
+            </div>
+            <div class="data-input">
+                <label for="">Select Payment Source</label>
+                <mat-form-field appearance="fill">
+                    <select matNativeControl required>
+                      <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                    </select>
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="btn-form">
+            <button mat-button>Pay Now</button>
+        </div>
+        <div class="payment-img">
+            <img src="/assets/payment_img.png" alt="">
+        </div>
+    </div>
+</div>
