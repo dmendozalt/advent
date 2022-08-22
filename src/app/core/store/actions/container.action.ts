@@ -8,6 +8,4 @@ export const ReviewContainer = createAction(
 );
 
 export const CancelReview = createAction(
-    '[Container] Cancel review container to book',
-    props<Container>()
-);
+    '[Container] Cancel review container to book');

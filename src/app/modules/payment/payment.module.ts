@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PaymentRoutingModule } from './payment-routing.module';
 import { PaymentComponent } from './payment/payment.component';
 import { AngularMaterialModule } from '@shared/angular-material/angular-material.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { AngularMaterialModule } from '@shared/angular-material/angular-material
     PaymentComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     PaymentRoutingModule,
     AngularMaterialModule

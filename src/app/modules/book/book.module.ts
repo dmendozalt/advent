@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { BookRoutingModule } from './book-routing.module';
 import { BookComponent } from './book/book.component';
+import { AngularMaterialModule } from '@shared/angular-material/angular-material.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { BookComponent } from './book/book.component';
   ],
   imports: [
     CommonModule,
-    BookRoutingModule
+    FormsModule,
+    BookRoutingModule,
+    AngularMaterialModule
   ]
 })
 export class BookModule { }
